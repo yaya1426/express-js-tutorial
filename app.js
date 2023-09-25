@@ -33,14 +33,14 @@ app.post("/users", (request, response) => {
 
 // DELETE - Remove data
 app.delete('/users/:id', (request, response) => {
-    const { id } = request.params
-    const findUserIndex = users.findIndex((x) => x.id === id)
+    const { id } = request.params;
+    const findUserIndex = users.findIndex((x) => x.id === id);
     if(findUserIndex == -1) {
-        response.status(400).send("User not found!")
-        return
+        response.status(400).send("User not found!");
+        return;
     }
-    users.splice(findUserIndex, 1)
-    response.status(200).send("User deleted successfully!")
+    users.splice(findUserIndex, 1);
+    response.status(200).send("User deleted successfully!");
 })
 
 app.listen(3000, () => {
